@@ -23,9 +23,15 @@ function loadMap() {
     row.appendChild(img);
     x += 500;
     if (x > limitX) {
-      document.getElementById("swipeable").appendChild(row);
       x = initialX;
       y += 500;
+      if (y <= limitY) {
+        img.onload = () => {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("map").style.opacity = 1;
+        };
+      }
+      document.getElementById("swipeable").appendChild(row);
       row = document.createElement("div");
       row.className = "row";
     }

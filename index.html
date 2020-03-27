@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script/leaflet.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900"
+    />
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+  </head>
+  <body>
+    <div style="display: none;" id="templates">
+      <div id="template-eifel">
+        <img
+          style="border-radius: 50%;"
+          src="https://i.insider.com/5ceeb9d44cf27072a702a379?width=1100&format=jpeg&auto=webp"
+          width="150"
+          height="150"
+        />
+      </div>
+      <div id="template-louvre">
+        <img
+          style="border-radius: 50%;"
+          src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F190402115305-louvre-museum-paris-pyramid.jpg"
+          width="150"
+          height="150"
+        />
+      </div>
+      <div id="template-dOrsay">
+        <img
+          style="border-radius: 50%;"
+          src="https://inhabitat.com/wp-content/blogs.dir/1/files/2012/07/musee-dorsay-dimitry-b.jpg"
+          width="150"
+          height="150"
+        />
+      </div>
+      <div id="template-arcDeTriomphe">
+        <img
+          style="border-radius: 50%;"
+          src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/71/34/bc.jpg"
+          width="150"
+          height="150"
+        />
+      </div>
+    </div>
+    <div id="mapObj" style="display: none;"></div>
+    <div id="map">
+      <div id="buttons">
+        <div onclick='findPlace("eifel")'>Eiffel</div>
+        <div onclick='findPlace("dOrsay")'>d'Orsay</div>
+        <div onclick='findPlace("louvre")'>Louvre museum</div>
+        <div onclick='findPlace("arcDeTriomphe")'>Arc de Troumphe</div>
+        <input type="text" placeholder="latitude" id="latitude" />
+        <input type="text" placeholder="longtitude" id="longtitude" />
+        <div id="search" onclick="search()">Search</div>
+      </div>
+      <div id="swipeable"></div>
+    </div>
+    <script src="./script/main.js"></script>
+  </body>
+</html>

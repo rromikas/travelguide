@@ -19,23 +19,22 @@ function loadMap() {
   row.className = "row";
   while (y <= limitY) {
     let img = document.createElement("img");
-    img.src = `./maps/france/${x}_${y}_${zoom}.png`;
+    let name = `./maps/france/${x}_${y}_${zoom}.png`;
+    img.src = name;
     row.appendChild(img);
     x += 500;
     if (x > limitX) {
       x = initialX;
       y += 500;
-      if (y <= limitY) {
-        img.onload = () => {
-          document.getElementById("loader").style.display = "none";
-          document.getElementById("map").style.opacity = 1;
-        };
-      }
       document.getElementById("swipeable").appendChild(row);
       row = document.createElement("div");
       row.className = "row";
     }
   }
+  window.addEventListener("load", () => {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("map").style.opacity = 1;
+  });
 }
 
 loadMap();
